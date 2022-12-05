@@ -1,0 +1,112 @@
+.accordion > li:last-child{
+    margin-bottom: 0;
+}
+
+.accordion__heading{
+    cursor: pointer;
+    padding-right: 80px;
+    position: relative;
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid transparent;
+    display: block;
+    width: 100%;
+    padding: 40.4px 0px;
+    transition: border-color .5s;
+}
+.accordion__heading-text{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--black);
+}
+.accordion__item:last-child{
+    border-bottom: 1px solid var(--grey);
+}
+.accordion__item:last-child:hover{
+    border-bottom: 1px solid var(--purple);
+}
+.accordion__item:hover .accordion__heading{
+    border-top: 1px solid var(--purple);
+}
+.accordion__item:hover .accordion__heading-text{
+    color: var(--purple);
+}
+.accordion__item:hover + .accordion__item .accordion__heading{
+    border-top: 1px solid var(--purple);
+}
+.accordion__heading:hover span{
+    border-color: var(--purple-light);
+    background-color: var(--purple-light);
+}
+.accordion__heading:focus{
+    outline: none;
+}
+.accordion__heading-text{
+    width: fit-content;
+    transition: color .5s, background-color .5s;
+}
+.accordion__heading:focus span{
+    background-color: var(--purple-light);
+    border-color: var(--purple-light);
+}
+.accordion__heading:focus .accordion__heading-text{
+    background: var(--purple);
+    color: white;
+}
+
+
+.accordion__heading span{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--grey-light-2);
+    background: var(--grey-light-2);
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    transition: border-color .5s, background .5s, transform .5s;
+}
+.accordion__heading span::before{
+    content: '';
+    display: block;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translate(-65%, -65%);
+}
+
+.accordion__heading.active {
+    border-color: var(--purple-dark);
+}
+.accordion__heading.active span{
+    background-color: var(--purple-light);
+    border-color: var(--purple-dark);
+    transform: translateY(-50%) rotate(225deg);
+}
+
+
+
+.accordion__content{
+    display: none;
+    height: 0;
+    transition: height 0.5s ease;
+    overflow: hidden;
+}
+.accordion__content.active{
+    height: auto;
+    display: block;
+}
+.accordion__inner{
+    padding-top: 20px;
+}
+/* ///////////////////////////////////new */
+
+
